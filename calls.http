@@ -1,0 +1,64 @@
+# fetch All Users 
+GET https://myclientservice.herokuapp.com/api/users/
+
+###
+# fetch user by given ID 
+GET https://myclientservice.herokuapp.com/api/users/61c8564a82ded72dcfb895cb
+
+
+###
+# enable user
+PUT https://myclientservice.herokuapp.com/api/users/61c8564a82ded72dcfb895cb/activer
+Content-Type: application/json
+
+###
+# disable user
+PUT https://myclientservice.herokuapp.com/api/users/61c8564a82ded72dcfb895cb/disactiver
+Content-Type: application/json
+
+###
+
+
+POST https://myclientservice.herokuapp.com/api/users/comptes HTTP/1.1
+Content-Type: application/json
+
+{
+    "userId": "61c8564a82ded72dcfb895cb",
+    "accountId": "61d05edb2eabd15706bb139e"
+}
+
+###
+# Update User Info
+PUT http://localhost:8080/api/users/update
+Content-Type: application/json
+
+{
+  "username": "hamza",
+  "firstname": "firstname",
+  "lastname": "lastname",
+  "phone": "phone",
+  "address": "address",
+  "cin": "cin",
+  "birthday": "birthday",
+  "agency": "agencyId"
+}
+
+
+###
+# Add Recipient to user
+POST https://myclientservice.herokuapp.com/api/users/addRecipient
+Content-Type: application/json
+
+{
+  "accountNumber": "123456789",
+  "email": "fast@gmail.com",
+  "groupName": "Group1",
+  "name": "Fast Netword",
+  "phone": "077898654552",
+  "salary": "13330",
+  "userId": "61d49aa49a397467188850ec"
+}
+
+###
+# Add User to recipient
+GET https://myclientservice.herokuapp.com/api/users/getUserRecipients?userId=61d49aa49a397467188850ec
